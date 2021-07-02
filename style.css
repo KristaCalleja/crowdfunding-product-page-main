@@ -1,0 +1,222 @@
+:root{
+    --moderate-cyan: hsl(176, 50%, 47%);
+    --dark-cyan: hsl(176, 72%, 28%);
+    --dark-gray: hsl(0, 0%, 48%);
+    --off-white: hsl(42, 81%, 95.9%);
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Commissioner', sans-serif;
+    background-color: var(--off-white);
+    font-size: 16px;
+}
+section{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url(images/image-hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Navigation */
+.navbar{
+    margin-top: 2.5em;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.nav-links, .close{
+    display: none;
+}
+.nav-menu{
+    width: 293px;
+    background-color: white;
+    font-weight: 500;
+    padding: 1em 1.5em;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    margin-top: 68px;
+    border-radius: 11px;
+    display: none;
+}
+a{
+    text-decoration: none;
+    line-height: 3em;
+    border-radius: 11px;
+    color: black;
+    font-weight: 500;
+}
+a::after{
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: var(--off-white);
+}
+.menu-modal{
+    height: 20px;
+    width: 30px;
+    background-image: url(images/icon-hamburger.svg);
+    cursor: pointer;
+}
+.menu-modal-active{
+    background-image: url(images/icon-close-menu.svg);
+    background-repeat: no-repeat;
+    background-size: 21px;
+}
+.nav-active{
+    display: inline;
+}
+h1{
+    font-size: 28px;
+}
+p{
+    color: var(--dark-gray);
+}
+ul{
+    list-style-type: none;
+}
+
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper > div{
+    box-shadow: -1px 2px 8px -6px #000000;
+    border-radius: 9px;
+    background-color: white;
+    width: 266px;
+    margin: 1em 0;
+    padding: 1em 2em;
+    text-align: center;
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.wrapper > div:nth-child(3n){
+    text-align: left;
+}
+.horizontal-line{
+    border: none;
+    height: 1px;
+    background: var(--dark-gray);
+    width: 20%;
+}
+button{
+    cursor: pointer;
+    background-color: var(--moderate-cyan);
+    border-radius: 28px;
+    border: 2px var(--moderate-cyan) solid;
+    padding: 1em 2.6em;
+    font-weight: 700;
+    color: var(--off-white);
+}
+button:hover{
+    background-color: var(--dark-cyan);
+    border: 2px var(--dark-cyan) solid;
+}
+.bookmark-btn{
+    display: none;
+}
+.bookmark-icon{
+    cursor: pointer;
+}
+.bookmark-icon-active{
+    filter: invert(67%) sepia(33%) saturate(746%) hue-rotate(127deg) brightness(86%) contrast(86%);
+}
+
+.box{
+    margin: 2em 0;
+    border: 1px var(--off-white) solid;
+    border-radius: 11px;
+    box-shadow: -1px 2px 8px -6px #000000;
+    padding: 2em 2em;
+}
+.box-title{
+    display: block;
+}
+.box-title > p{
+    color: var(--moderate-cyan);
+}
+#success-modal{
+    align-self: center;
+    background: white;
+    text-align: center;
+    padding: 2em 1em;
+    width: 325px;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+@media(min-width:900px){
+    /* Navigation */
+    section{
+        background-image: url(images/image-hero-desktop.jpg);
+    }
+    .nav-links{
+        display: flex;
+    }
+    .nav-links ul li{
+        display: inline-block;
+        margin: 0 1em;
+    }
+    a::after{
+       display: none;
+    }
+    .nav-links a{
+        color: white;
+    }
+    .menu-modal{
+        display: none;
+    }
+
+    .wrapper > div{
+        width: 720px;
+    }
+    .wrapper > div:nth-child(2n){
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    .wrapper > div:nth-child(2n) h2{
+        margin: 0 1em;
+    }
+    .horizontal-line{
+        transform: rotate(90deg);
+        width: 5%;
+    }
+    .bookmark-btn{
+        cursor: pointer;
+        display: inline;
+        background-color: var(--off-white);
+        border-radius: 0 28px 28px 0;
+        border: 2px var(--off-white) solid;
+        padding: 1em 2em 1em 1em;
+        font-weight: 700;
+        color: black;
+    }
+    .bookmark-btn-active{
+        color: var(--moderate-cyan);
+    }
+    .box-title{
+        display: flex;
+        justify-content: space-between;
+    }
+    #success-modal{
+        width: 536px;
+    }
+}
