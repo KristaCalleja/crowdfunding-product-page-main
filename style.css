@@ -88,6 +88,7 @@ ul{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .wrapper > div{
     box-shadow: -1px 2px 8px -6px #000000;
@@ -149,11 +150,12 @@ button:hover{
     color: var(--moderate-cyan);
 }
 #success-modal{
-    align-self: center;
-    background: white;
+    display: block;
     text-align: center;
     padding: 2em 1em;
-    width: 325px;
+    position: absolute;
+    padding-top: 100px;
+    z-index: 1;
 }
 .attribution { 
     font-size: 11px; 

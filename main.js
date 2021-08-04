@@ -7,6 +7,7 @@ const bookIcon = document.querySelector('.bookmark-icon');
 
 const callToAction = document.querySelector('button');
 const successModal = document.getElementById('success-modal');
+const wrapper = document.querySelector('.wrapper');
 
 // Toggle mobile menu
 function navShow(){
@@ -25,6 +26,6 @@ bookIcon.addEventListener('click', toggleBookMark);
 
 // Success modal
 function onOpen(){
-    typeof successModal.showModal();
+    alert(successModal.textContent);
 }
-callToAction.addEventListener('click', console.log('open'));
+callToAction.addEventListener('click', onOpen);
