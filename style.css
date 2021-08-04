@@ -3,6 +3,7 @@
     --dark-cyan: hsl(176, 72%, 28%);
     --dark-gray: hsl(0, 0%, 48%);
     --off-white: hsl(42, 81%, 95.9%);
+    --sonic-silver: hsl(0, 0%, 48%);
 }
 body{
     box-sizing: border-box;
@@ -149,13 +150,31 @@ button:hover{
 .box-title > p{
     color: var(--moderate-cyan);
 }
-#success-modal{
-    display: block;
+/* Modals */
+.modal-outer{
+    background: var(--sonic-silver);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Hide modal until needed */
+    opacity: 0;
+    pointer-events: none;
+}
+.modal-outer.open{
+    opacity: 1;
+    pointer-events: all;
+}
+#modal-completed{
+    max-width: 436px;
+    border-radius: 9px;
+    background: white;
     text-align: center;
-    padding: 2em 1em;
-    position: absolute;
-    padding-top: 100px;
-    z-index: 1;
+    padding: 2em;
 }
 .attribution { 
     font-size: 11px; 
