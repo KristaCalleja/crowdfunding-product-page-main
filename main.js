@@ -6,9 +6,12 @@ const bookMarkBtn = document.querySelector('.bookmark-btn');
 const bookIcon = document.querySelector('.bookmark-icon');
 
 const callToAction = document.querySelector('button');
+const modalOuterCompleted = document.querySelector('.modal-outer-completed');
 const successModal = document.getElementById('modal-completed');
-const modalOuter = document.querySelector('.modal-outer');
-const wrapper = document.querySelector('.wrapper');
+
+const selectionBtns = document.querySelectorAll('.selection');
+const modalOuterSelection = document.querySelector('.modal-outer-selection');
+const selectionModal = document.getElementById('selection-modal');
 
 // Toggle mobile menu
 function navShow(){
@@ -28,15 +31,15 @@ bookIcon.addEventListener('click', toggleBookMark);
 
 // Success modal
 function openSuccessModal(){
-    modalOuter.classList.add('open');
+    modalOuterCompleted.classList.add('open');
 }
 callToAction.addEventListener('click', openSuccessModal);
 
 // Close success modal
 function closeSuccessModal(){
-    modalOuter.classList.remove('open');
+    modalOuterCompleted.classList.remove('open');
 }
-modalOuter.addEventListener('click', function(event){
+modalOuterCompleted.addEventListener('click', function(event){
     console.log(event.target);
     console.log(event.currentTarget);
     const isOutside = !event.target.closest('modal-completed');
@@ -44,9 +47,16 @@ modalOuter.addEventListener('click', function(event){
         closeSuccessModal();
     }
 });
-
 window.addEventListener('keydown', (event) => {
     if(event.key == 'Escape'){
         closeSuccessModal();
     }
 })
+
+// Selection modal
+function openSelectionModal(){
+    console.log('clicked reward');
+    modalOuterSelection.classList.add('open');
+}
+// Iteration
+selectionBtns.forEach(button => button.addEventListener('click', openSelectionModal));

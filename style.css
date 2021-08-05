@@ -151,7 +151,7 @@ button:hover{
     color: var(--moderate-cyan);
 }
 /* Modals */
-.modal-outer{
+.modal-outer-completed, .modal-outer-selection{
     background: var(--sonic-silver);
     position: fixed;
     height: 100vh;
@@ -165,7 +165,7 @@ button:hover{
     opacity: 0;
     pointer-events: none;
 }
-.modal-outer.open{
+.modal-outer-completed.open{
     opacity: 1;
     pointer-events: all;
 }
@@ -175,6 +175,31 @@ button:hover{
     background: white;
     text-align: center;
     padding: 2em;
+}
+.modal-outer-selection.open{
+    opacity: 1;
+    pointer-events: all;
+}
+#selection-modal{
+    max-width: 620px;
+    text-align: left;
+    background: white;
+    padding: 2em;
+    border-radius: 9px;
+}
+#selection-modal div{
+    border: 1px var(--sonic-silver) solid;
+    border-radius: 9px;
+    padding: 1.5em;
+    margin: 2em 0;
+}
+#selection-modal span{
+    color: var(--moderate-cyan);
+    font-weight: 700;
+    margin-left: .8em;
+}
+#selection-modal label{
+    font-weight: 700;
 }
 .attribution { 
     font-size: 11px; 
